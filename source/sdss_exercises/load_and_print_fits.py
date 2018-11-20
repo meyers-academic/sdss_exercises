@@ -17,6 +17,12 @@ def load_and_print_file_list(file_list):
     for file in file_list:
         hdu_list = load_file(file)
         print("'{0}' has {1} hdus in it".format(file, len(hdu_list)))
+        for ii in range(len(hdu_list)):
+            hdu1 = hdu_list[ii]  # FITS HDU counting is from 1
+            print('BITPIX type of HDU{0} = {1}'.format(ii + 1,
+                                                       hdu1.header['BITPIX']))
+        # be sure to close the file handle
+        hdu_list.close()
 
 
 if __name__ == "__main__":
