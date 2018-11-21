@@ -21,6 +21,7 @@ def load_and_print_file_list(file_list):
       hdu1 = hdu_list[i]
       print('BITPIX type of HDU{0} = {1}'.format(i+1, hdu1.header['BITPIX']))
     print('\n')
+    hdu_list.close()
 
 
 if __name__ == "__main__":
